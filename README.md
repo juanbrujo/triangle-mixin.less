@@ -1,5 +1,6 @@
 #triangle-mixin.less
 
+![triangle-mixin.less](https://photos-6.dropbox.com/t/0/AAB6RGNGT3RdtUrDsE7fhJWYvZ3s4bLssltFcCCQWmA-Dw/12/3522/jpeg/1024x768/3/1394553600/0/2/less-triangle.jpg/7-Gh2O7w7kKriRYaNODKgaWLSiFJkPzc9C1MRySTr5c)
 `Less CSS triangle mixin`, create any kind of triangles with ease.
 
 ### Demo: 
