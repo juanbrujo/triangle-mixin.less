@@ -1,0 +1,65 @@
+/**
+* Less CSS triangle mixin, create any kind of triangles with ease
+
+* Use: 
+* .triangle(direction,width,height,color);
+
+* Example:
+* @square: 50px;
+* @color: red;
+* selector {
+*   .triangle(bottomright,@square,@square,@color);
+* }
+
+* https://github.com/juanbrujo/triangle-mixin.less
+* 2014 © Jorge Epuñan | csslab.cl
+*/
+
+.triangle-base() {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    -moz-transform: scale(.9999);
+}
+.triangle(@direction, @sizeH, @sizeV, @color) when (@direction = top) {
+    .triangle-base();
+    border-width: 0 @sizeV @sizeH @sizeV;
+    border-color: transparent transparent @color transparent;
+}
+.triangle(@direction, @sizeH, @sizeV, @color) when (@direction = bottom) {
+    .triangle-base();
+    border-width: @sizeV @sizeH 0 @sizeV;
+    border-color: @color transparent transparent transparent;
+}
+.triangle(@direction, @sizeH, @sizeV, @color) when (@direction = left) {
+    .triangle-base();
+    border-width: @sizeV @sizeH @sizeV 0;
+    border-color: transparent @color transparent transparent;
+}
+.triangle(@direction, @sizeH, @sizeV, @color) when (@direction = right) {
+    .triangle-base();
+    border-width: @sizeV 0 @sizeV @sizeH;
+    border-color: transparent transparent transparent @color;
+}
+.triangle(@direction, @sizeH, @sizeV, @color) when (@direction = topright) {
+    .triangle-base();
+    border-width: 0 @sizeH @sizeV 0;
+    border-color: transparent @color transparent transparent;
+}
+.triangle(@direction, @sizeH, @sizeV, @color) when (@direction = bottomright) {
+    .triangle-base();
+    border-width: 0 0 @sizeH @sizeV;
+    border-color: transparent transparent @color transparent;
+}
+.triangle(@direction, @sizeH, @sizeV, @color) when (@direction = bottomleft) {
+    .triangle-base();
+    border-width: @sizeH 0 0 @sizeV;
+    border-color: transparent transparent transparent @color;
+}
+.triangle(@direction, @sizeH, @sizeV, @color) when (@direction = topleft) {
+    .triangle-base();
+    border-width: @sizeH @sizeV 0 0;
+    border-color: @color transparent transparent transparent;
+}
