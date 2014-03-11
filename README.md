@@ -5,7 +5,7 @@
 ### Demo: 
 [Codepen.io Demo](http://codepen.io/juanbrujo/pen/dleuF)
 
-###Types of triangle
+###Triangles: direction
 	top
 	bottom
 	left
@@ -25,6 +25,32 @@ By default it creates an isosceles triangle, but  you can make scalene triangles
 
 	@square: 50px;
 	@color: red;
+	
 	selector {
 	  .triangle(bottomright,@square,@square,@color);
 	}
+
+###Advanced
+	@square: 50px;
+	@color: red;
+	
+	.advanced {
+  	  width: @square*2;
+  	  height: @square;
+  	  line-height: @square;
+  	  background-color: @color;
+  	  position: relative;
+  	    	  
+  	    &:after {
+   		  position: absolute;
+    	  left: 0;
+    	  top: -@square;
+    	  .triangle(top,@square,@square,@color);
+  	    }
+  	    &:before {
+    	  position: absolute;
+    	  left: 0;
+    	  top: @square;
+    	  .triangle(topleft,@square*2,@square*2,@color);
+  	    }
+	  }
